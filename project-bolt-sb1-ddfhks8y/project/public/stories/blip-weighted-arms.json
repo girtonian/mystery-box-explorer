@@ -1,0 +1,227 @@
+{
+  "id": "blip-weighted-arms-001",
+  "attachmentId": "weighted_arms",
+  "characterId": "blip",
+  "metadata": {
+    "title": "Blip's Weighted Arms Discovery",
+    "description": "Blip learns how weighted arms provide calming deep pressure for focus and emotional regulation",
+    "estimatedDuration": 5,
+    "difficultyLevel": "beginner",
+    "sensoryFocus": ["deep_pressure", "interoceptive_awareness"],
+    "therapeuticGoals": [
+      "anxiety_reduction",
+      "self_regulation",
+      "emotional_awareness",
+      "calming_strategies"
+    ],
+    "ageRange": {
+      "min": 4,
+      "max": 12
+    }
+  },
+  "startNodeId": "intro",
+  "nodes": {
+    "intro": {
+      "id": "intro",
+      "attachmentType": "weighted_arms",
+      "content": {
+        "id": "intro-segment",
+        "text": "Hey there! I'm Blip, and I have SO much energy! Sometimes my mind goes really fast, and I need something to help me slow down. Today I discovered these amazing weighted arms!",
+        "voiceEmotion": "excited",
+        "visualCues": [
+          {
+            "type": "bounce",
+            "target": "#character-blip",
+            "duration": 2000,
+            "intensity": "moderate"
+          }
+        ],
+        "voicePrompts": [
+          {
+            "text": "Say 'hi Blip' to join my discovery!",
+            "expectedResponses": ["hi blip", "hello blip", "hi", "hello"],
+            "timeout": 10000,
+            "fallbackAction": "continue",
+            "encouragement": "Awesome! Let's explore together!"
+          }
+        ],
+        "duration": 15,
+        "pauseAfter": 3
+      },
+      "branches": [
+        {
+          "condition": "voice_response",
+          "targetSegmentId": "feeling",
+          "weight": 1
+        },
+        {
+          "condition": "timeout",
+          "targetSegmentId": "feeling",
+          "weight": 1
+        }
+      ],
+      "sensoryStrategy": "deep_pressure",
+      "isEndNode": false
+    },
+    "feeling": {
+      "id": "feeling",
+      "attachmentType": "weighted_arms",
+      "content": {
+        "id": "feeling-segment",
+        "text": "When I put on these weighted arms, something magical happens! The gentle weight feels like a warm, cozy hug around my arms. It's like my body is getting a message that says 'time to feel calm and safe.'",
+        "voiceEmotion": "calm",
+        "visualCues": [
+          {
+            "type": "glow",
+            "target": "#weighted-arms-visual",
+            "duration": 4000,
+            "intensity": "gentle"
+          }
+        ],
+        "voicePrompts": [
+          {
+            "text": "Have you ever felt a really nice, gentle hug? Say 'yes' if you like hugs, or 'no' if you prefer other gentle touches!",
+            "expectedResponses": ["yes", "no", "hugs", "maybe", "sometimes"],
+            "timeout": 8000,
+            "fallbackAction": "continue",
+            "encouragement": "That's perfectly okay! Everyone likes different kinds of gentle touches."
+          }
+        ],
+        "duration": 20,
+        "pauseAfter": 4
+      },
+      "branches": [
+        {
+          "condition": "voice_response",
+          "targetSegmentId": "understanding",
+          "weight": 1
+        },
+        {
+          "condition": "timeout",
+          "targetSegmentId": "understanding",
+          "weight": 1
+        }
+      ],
+      "sensoryStrategy": "deep_pressure",
+      "isEndNode": false
+    },
+    "understanding": {
+      "id": "understanding",
+      "attachmentType": "weighted_arms",
+      "content": {
+        "id": "understanding-segment",
+        "text": "You know what's really cool? The weight on my arms helps my nervous system understand that it's time to slow down. When I feel worried or my thoughts are racing, the deep pressure tells my body 'everything is okay, you can relax now.'",
+        "voiceEmotion": "understanding",
+        "visualCues": [
+          {
+            "type": "pulse",
+            "target": "#nervous-system-visual",
+            "duration": 5000,
+            "intensity": "subtle"
+          }
+        ],
+        "voicePrompts": [
+          {
+            "text": "Sometimes our minds need help slowing down. What makes you feel calm and peaceful?",
+            "expectedResponses": ["weighted arms", "hugs", "quiet", "music", "breathing", "nothing"],
+            "timeout": 12000,
+            "fallbackAction": "continue",
+            "encouragement": "Those are wonderful ways to feel calm! Everyone has their own special ways."
+          }
+        ],
+        "duration": 25,
+        "pauseAfter": 5
+      },
+      "branches": [
+        {
+          "condition": "voice_response",
+          "targetSegmentId": "technique",
+          "weight": 1
+        },
+        {
+          "condition": "timeout",
+          "targetSegmentId": "technique",
+          "weight": 1
+        }
+      ],
+      "sensoryStrategy": "deep_pressure",
+      "isEndNode": false
+    },
+    "technique": {
+      "id": "technique",
+      "attachmentType": "weighted_arms",
+      "content": {
+        "id": "technique-segment",
+        "text": "Let me show you my special technique! When I wear my weighted arms, I like to take slow, deep breaths and notice how the gentle pressure feels. I imagine the weight is like a friend giving me a supportive hug.",
+        "voiceEmotion": "gentle",
+        "visualCues": [
+          {
+            "type": "animation",
+            "target": "#breathing-visual",
+            "duration": 8000,
+            "intensity": "gentle"
+          }
+        ],
+        "voicePrompts": [
+          {
+            "text": "Let's try breathing together! Take a slow breath in... and slowly breathe out. Say 'peaceful' when you feel ready!",
+            "expectedResponses": ["peaceful", "calm", "ready", "done", "good"],
+            "timeout": 15000,
+            "fallbackAction": "continue",
+            "encouragement": "Beautiful breathing! You're learning such an important skill."
+          }
+        ],
+        "duration": 30,
+        "pauseAfter": 6
+      },
+      "branches": [
+        {
+          "condition": "voice_response",
+          "targetSegmentId": "conclusion",
+          "weight": 1
+        },
+        {
+          "condition": "timeout",
+          "targetSegmentId": "conclusion",
+          "weight": 1
+        }
+      ],
+      "sensoryStrategy": "deep_pressure",
+      "isEndNode": false
+    },
+    "conclusion": {
+      "id": "conclusion",
+      "attachmentType": "weighted_arms",
+      "content": {
+        "id": "conclusion-segment",
+        "text": "What an incredible journey we've shared! Now I know that my weighted arms aren't just accessories - they're my personal calm-down helpers. They remind me that it's okay to need support, and that taking care of myself is important!",
+        "voiceEmotion": "reassuring",
+        "visualCues": [
+          {
+            "type": "glow",
+            "target": "#completion-heart",
+            "duration": 5000,
+            "intensity": "strong"
+          }
+        ],
+        "voicePrompts": [
+          {
+            "text": "Say 'goodbye Blip' to finish our calming adventure!",
+            "expectedResponses": ["goodbye blip", "bye blip", "goodbye", "bye", "see you"],
+            "timeout": 10000,
+            "fallbackAction": "continue",
+            "encouragement": "Goodbye! Remember, you always have the power to help yourself feel calm and safe."
+          }
+        ],
+        "duration": 20,
+        "pauseAfter": 3
+      },
+      "branches": [],
+      "sensoryStrategy": "deep_pressure",
+      "isEndNode": true
+    }
+  },
+  "version": "1.0.0",
+  "lastModified": 1750736550000,
+  "createdAt": 1750736550000
+}

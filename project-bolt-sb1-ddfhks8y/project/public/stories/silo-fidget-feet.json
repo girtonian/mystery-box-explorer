@@ -1,0 +1,227 @@
+{
+  "id": "silo-fidget-feet-001",
+  "attachmentId": "fidget_feet",
+  "characterId": "silo",
+  "metadata": {
+    "title": "Silo's Fidget Feet Adventure",
+    "description": "Silo discovers how fidget feet help with focus and calm through proprioceptive input",
+    "estimatedDuration": 5,
+    "difficultyLevel": "beginner",
+    "sensoryFocus": ["proprioceptive_input", "vestibular_movement"],
+    "therapeuticGoals": [
+      "movement_for_calm",
+      "focus_improvement", 
+      "body_awareness",
+      "self_regulation"
+    ],
+    "ageRange": {
+      "min": 4,
+      "max": 12
+    }
+  },
+  "startNodeId": "intro",
+  "nodes": {
+    "intro": {
+      "id": "intro",
+      "attachmentType": "fidget_feet",
+      "content": {
+        "id": "intro-segment",
+        "text": "Hi there! I'm Silo, and I love noticing patterns and details. Today I found something really interesting - these special fidget feet! They feel different under my feet, and I wonder what they do.",
+        "voiceEmotion": "curious",
+        "visualCues": [
+          {
+            "type": "glow",
+            "target": "#character-silo",
+            "duration": 2000,
+            "intensity": "moderate"
+          }
+        ],
+        "voicePrompts": [
+          {
+            "text": "Say 'hello Silo' to start our adventure!",
+            "expectedResponses": ["hello silo", "hello", "hi silo", "hi"],
+            "timeout": 10000,
+            "fallbackAction": "continue",
+            "encouragement": "That's okay! Let's explore together anyway."
+          }
+        ],
+        "duration": 15,
+        "pauseAfter": 3
+      },
+      "branches": [
+        {
+          "condition": "voice_response",
+          "targetSegmentId": "discovery",
+          "weight": 1
+        },
+        {
+          "condition": "timeout",
+          "targetSegmentId": "discovery",
+          "weight": 1
+        }
+      ],
+      "sensoryStrategy": "proprioceptive_input",
+      "isEndNode": false
+    },
+    "discovery": {
+      "id": "discovery",
+      "attachmentType": "fidget_feet",
+      "content": {
+        "id": "discovery-segment",
+        "text": "When I put my feet on these fidget feet, something amazing happens! The bumps and textures send signals to my brain. It's like my feet are talking to my mind, telling it to pay attention and feel calm.",
+        "voiceEmotion": "excited",
+        "visualCues": [
+          {
+            "type": "pulse",
+            "target": "#fidget-feet-visual",
+            "duration": 3000,
+            "intensity": "gentle"
+          }
+        ],
+        "voicePrompts": [
+          {
+            "text": "Can you feel the textures too? Say 'I can feel it' if you're touching something bumpy or textured!",
+            "expectedResponses": ["i can feel it", "yes", "i feel it", "feel it"],
+            "timeout": 8000,
+            "fallbackAction": "continue",
+            "encouragement": "That's wonderful! Our bodies are amazing at feeling different textures."
+          }
+        ],
+        "duration": 20,
+        "pauseAfter": 4
+      },
+      "branches": [
+        {
+          "condition": "voice_response",
+          "targetSegmentId": "learning",
+          "weight": 1
+        },
+        {
+          "condition": "timeout",
+          "targetSegmentId": "learning",
+          "weight": 1
+        }
+      ],
+      "sensoryStrategy": "proprioceptive_input",
+      "isEndNode": false
+    },
+    "learning": {
+      "id": "learning",
+      "attachmentType": "fidget_feet",
+      "content": {
+        "id": "learning-segment",
+        "text": "You know what I've learned? When my mind feels busy or scattered, using my fidget feet helps me focus. The feeling in my feet sends calm signals to my brain. It's like having a secret superpower!",
+        "voiceEmotion": "understanding",
+        "visualCues": [
+          {
+            "type": "animation",
+            "target": "#brain-connection",
+            "duration": 4000,
+            "intensity": "subtle"
+          }
+        ],
+        "voicePrompts": [
+          {
+            "text": "What helps you feel calm and focused? You can tell me, or just think about it quietly.",
+            "expectedResponses": ["fidget feet", "moving", "touching", "quiet", "music"],
+            "timeout": 12000,
+            "fallbackAction": "continue",
+            "encouragement": "Everyone has different things that help them feel good. That's perfectly normal!"
+          }
+        ],
+        "duration": 25,
+        "pauseAfter": 5
+      },
+      "branches": [
+        {
+          "condition": "voice_response",
+          "targetSegmentId": "practice",
+          "weight": 1
+        },
+        {
+          "condition": "timeout",
+          "targetSegmentId": "practice",
+          "weight": 1
+        }
+      ],
+      "sensoryStrategy": "proprioceptive_input",
+      "isEndNode": false
+    },
+    "practice": {
+      "id": "practice",
+      "attachmentType": "fidget_feet",
+      "content": {
+        "id": "practice-segment",
+        "text": "Let's practice together! I'm going to use my fidget feet to help me feel calm and ready. You can try it too if you have something textured to touch with your feet, or just imagine the feeling.",
+        "voiceEmotion": "encouraging",
+        "visualCues": [
+          {
+            "type": "bounce",
+            "target": "#practice-area",
+            "duration": 6000,
+            "intensity": "gentle"
+          }
+        ],
+        "voicePrompts": [
+          {
+            "text": "Take three deep breaths with me. Say 'ready' when you feel calm and focused!",
+            "expectedResponses": ["ready", "calm", "focused", "done"],
+            "timeout": 15000,
+            "fallbackAction": "continue",
+            "encouragement": "Great job! You're learning to use your body to help your mind feel good."
+          }
+        ],
+        "duration": 30,
+        "pauseAfter": 6
+      },
+      "branches": [
+        {
+          "condition": "voice_response",
+          "targetSegmentId": "conclusion",
+          "weight": 1
+        },
+        {
+          "condition": "timeout",
+          "targetSegmentId": "conclusion",
+          "weight": 1
+        }
+      ],
+      "sensoryStrategy": "proprioceptive_input",
+      "isEndNode": false
+    },
+    "conclusion": {
+      "id": "conclusion",
+      "attachmentType": "fidget_feet",
+      "content": {
+        "id": "conclusion-segment",
+        "text": "What an amazing adventure we've had! Now I know that my fidget feet are more than just a toy - they're a tool that helps my brain feel calm and focused. Remember, everyone's body is different, and that's what makes us special!",
+        "voiceEmotion": "gentle",
+        "visualCues": [
+          {
+            "type": "glow",
+            "target": "#completion-star",
+            "duration": 5000,
+            "intensity": "strong"
+          }
+        ],
+        "voicePrompts": [
+          {
+            "text": "Say 'thank you Silo' to finish our story!",
+            "expectedResponses": ["thank you silo", "thank you", "thanks silo", "bye silo"],
+            "timeout": 10000,
+            "fallbackAction": "continue",
+            "encouragement": "You're so welcome! I loved sharing this adventure with you."
+          }
+        ],
+        "duration": 20,
+        "pauseAfter": 3
+      },
+      "branches": [],
+      "sensoryStrategy": "proprioceptive_input",
+      "isEndNode": true
+    }
+  },
+  "version": "1.0.0",
+  "lastModified": 1750736550000,
+  "createdAt": 1750736550000
+}
